@@ -85,7 +85,7 @@ def crawl_academic_calendar():
         })
 
     # JSON 저장
-    with open("academic_calendar.json", "w", encoding="utf-8") as f:
+    with open("../rag_data/canlendar/academic_calendar.json", "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
 

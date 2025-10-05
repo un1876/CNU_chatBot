@@ -10,6 +10,8 @@ import requests
 import requests
 import urllib.parse
 from bs4 import BeautifulSoup
+from reformation import reform
+
 
 load_dotenv()
 token=os.getenv("TOKEN")
@@ -22,11 +24,11 @@ model = GPT2LMHeadModel.from_pretrained(chat_dir, token=token).eval()
 
 
 # 데이터 로딩
-with open("../menu_1.json", "r", encoding="utf-8") as f:
+with open("../rag_data/restaurant/menu_1.json", "r", encoding="utf-8") as f:
     fixed_menu_1 = json.load(f)
-with open("../menu_other.json", "r", encoding="utf-8") as f:
+with open("../rag_data/restaurant/menu_other.json", "r", encoding="utf-8") as f:
     daily_menu = json.load(f)
-with open('../bus.json', 'r', encoding='utf-8') as f:
+with open('../rag_data/bus/bus.json', 'r', encoding='utf-8') as f:
     bus_stops = json.load(f)
 
 
@@ -45,6 +47,7 @@ def extract_cafeteria_from_message(message):
     elif re.search(r"(생과대|생활과학대학)", message):
         return "생활과학대학"
     return None
+
 def get_meal_types_from_message_or_time(message):
     meal_keywords = {
         "조식": ["조식", "아침"],
@@ -271,7 +274,7 @@ def rag_answer_from_bus(message, tokenizer, model, service_key):
 #-------------------------------------------------졸업 요건----------------------------------------------------
 def get_from_graduate(message,topic):
     old_prompt=f"[TOPIC] {topic} [USER] {message} [SEP] [BOT]"
-    with open("../졸업요건_RAG.json", encoding="utf-8") as f:
+    with open("../rag_data/graduation_requirements/졸업요건_RAG.json", encoding="utf-8") as f:
         rag = json.load(f)
 
     # (2) dept_alias 자동 생성 (JSON key 기반)
@@ -354,11 +357,13 @@ def get_from_graduate(message,topic):
 
 
 
+
+
 #---------------------------------------------학사일정---------------------------------------------------
 # 일단 학사일정 갱신
 
 def make_rag_context_from_academic_calendar(message):
-    with open("academic_calendar.json", encoding="utf-8") as f:
+    with open("../rag_data/canlendar/academic_calendar.json", encoding="utf-8") as f:
         calendar_data = json.load(f)
 
     context_lines = []
@@ -518,7 +523,12 @@ def respond(message, history=None):
     else:
         response = "지원되지 않는 주제입니다."
 
+    response=reform(response)
     history.append({"role": "user", "content": message})
     history.append({"role": "assistant", "content": response})
     return "", history
+
+
+
+# print(respond("경제학과 졸업요건에 대해 알려줘"))
 

@@ -4,15 +4,18 @@
 
 # 0. Getting Started
 ```bash
-$ pip install -r requirements.txt
+ pip install -r requirements.txt
+ cd scr
+ python chatbot_ui.py
+
 ```
 
 [//]: # ([서비스 링크]&#40;https://club-project-one.vercel.app/&#41;)
 
 
 # 1. Project Overview
-- 프로젝트 이름:CNU 챗봇
-- 프로젝트 설명:교내 다섯 주제(졸업요건, 학사 공지, 학사 일정, 교내 버스, 교내 식당)에 대해 질의응답하는 챗봇 
+- 프로젝트 이름: CNU 챗봇
+- 프로젝트 설명: 교내 다섯 주제(졸업요건, 학사 공지, 학사 일정, 교내 버스, 교내 식당)에 대해 질의응답하는 챗봇 
 
 
 # 2. Team Members (팀원 및 팀 소개)
@@ -126,7 +129,12 @@ $ pip install -r requirements.txt
 # 7. 시스템 아키텍쳐
 <img src="public/ChatBot_SystemArchitecture.jpg"/>
 
+# 8. License
+본 프로젝트의 UI 코드는 다음 오픈소스 프로젝트를 일부 참고/재사용했습니다:
+- imgToVideo (MIT License) © 20XX Original Author
 
+원본 라이선스 전문은 프로젝트 루트의 LICENSE 파일을 참고하세요.
+일부 구성요소/이미지/폰트는 별도 라이선스를 따를 수 있습니다.
 
 
 
