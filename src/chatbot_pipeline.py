@@ -480,7 +480,7 @@ def extract_topic_from_message(message):
     tokenizer_classification = AutoTokenizer.from_pretrained(model_dir,token=token,use_fast=True)
     model_classification = AutoModelForSequenceClassification.from_pretrained(model_dir,token=token).eval()
 
-    inputs = tokenizer_classification(message, return_tensors="pt", truncation=True, padding=True)
+    inputs = tokenizer_classification(message, return_tensors="pt", truncation=False, padding=True)
 
     # 모델 예측
     with torch.no_grad():
@@ -523,7 +523,7 @@ def respond(message, history=None):
     else:
         response = "지원되지 않는 주제입니다."
 
-    response=reform(response)
+    response=reform(message,response,topic)
     history.append({"role": "user", "content": message})
     history.append({"role": "assistant", "content": response})
     return "", history

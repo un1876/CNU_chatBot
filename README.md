@@ -5,8 +5,8 @@
 # 0. Getting Started
 ```bash
  pip install -r requirements.txt
- cd scr
- python chatbot_ui.py
+ cd src
+ python cnuchatbot.py
 
 ```
 
@@ -19,10 +19,10 @@
 
 
 # 2. Team Members (팀원 및 팀 소개)
-|                 김동언                  |                 최재영                 | 최은서 |  
-|:------------------------------------:|:-----------------------------------:|:---:|
-|                PL, BE                |                 FE                  | FE  |
-| [GitHub](hhttps://github.com/un1876) |                                     | |
+|                 김동언                  |  최재영  | 최은서 |  
+|:------------------------------------:|:-----:|:---:|
+|               PL,FE,BE               | DB,FE | DB  |
+| [GitHub](hhttps://github.com/un1876) |       |     |
 
 - Duration: 25.05 ~ 06
 
@@ -124,10 +124,19 @@
 [//]: # (<br/>)
 
 # 6. 서비스 화면
-<img src="public/capture.png"/>
+  - 첫화면
+<img src="public/1.png"/>
+  - 채팅
+  <img src="public/3.png"/>
+  <img src="public/4.png"/>
+  - 추가 기능 -표현(ex.간략히)
+  <img src="public/2.png"/>
+  <img src="public/2_1.png"/>
+  <img src="public/5.png"/>
 
 # 7. 시스템 아키텍쳐
 <img src="public/ChatBot_SystemArchitecture.jpg"/>
+
 
 # 8. License
 본 프로젝트의 UI 코드는 다음 오픈소스 프로젝트를 일부 참고/재사용했습니다:
