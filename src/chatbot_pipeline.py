@@ -15,13 +15,17 @@ from reformation import reform
 
 load_dotenv()
 token=os.getenv("TOKEN")
+
+model_dir = "spidyun/chatbot-roberta"
 chat_dir = "spidyun/kogpt2-finetuned"
-# 전역 모델 로드
+
+#분류 모델 - RobertA
+tokenizer_classification = AutoTokenizer.from_pretrained(model_dir, token=token, use_fast=True)
+model_classification = AutoModelForSequenceClassification.from_pretrained(model_dir, token=token).eval()
+
+#챗 봇 모델 - KoGPT2
 tokenizer = AutoTokenizer.from_pretrained(chat_dir, token=token, use_fast=True)
 model = GPT2LMHeadModel.from_pretrained(chat_dir, token=token).eval()
-
-
-
 
 # 데이터 로딩
 with open("../rag_data/restaurant/menu_1.json", "r", encoding="utf-8") as f:
@@ -474,12 +478,8 @@ def rag_answer_for_notices(user_message):
 
 #분류기를 사용하여 topic을 우선 추출
 def extract_topic_from_message(message):
-    model_dir = "spidyun/roberta-kor-finetuned"
 
     # 자동으로 저장된 토크나이저 타입을 불러옴
-    tokenizer_classification = AutoTokenizer.from_pretrained(model_dir,token=token,use_fast=True)
-    model_classification = AutoModelForSequenceClassification.from_pretrained(model_dir,token=token).eval()
-
     inputs = tokenizer_classification(message, return_tensors="pt", truncation=False, padding=True)
 
     # 모델 예측
@@ -500,6 +500,7 @@ def extract_topic_from_message(message):
 # respond 함수만 이 파일에 최종적으로 노출
 def respond(message, history=None):
 
+    print("message:", message)
 
     if history is None:
         history = []
