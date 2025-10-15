@@ -4,6 +4,8 @@
 
 # 0. Getting Started
 ```bash
+ git clone https://github.com/un1876/CNU_chatBot.git
+ cd CNU_chatBot
  pip install -r requirements.txt
  cd src
  python cnuchatbot.py
@@ -19,10 +21,10 @@
 
 
 # 2. Team Members (팀원 및 팀 소개)
-|                 김동언                  |  최재영  | 최은서 |  
-|:------------------------------------:|:-----:|:---:|
-|               PL,FE,BE               | DB,FE | DB  |
-| [GitHub](hhttps://github.com/un1876) |       |     |
+|                 김동언                  |  최재영  |  최은서  |  
+|:------------------------------------:|:-----:|:-----:|
+|               PL,FE,BE               | DB,FE | DB,BE |
+| [GitHub](hhttps://github.com/un1876) |       |       |
 
 - Duration: 25.05 ~ 06
 
@@ -31,7 +33,7 @@
 - **질문 분류**:
   - 질문 시 분류모델에서 다섯 주제 중 하나로 분류
 - **질의 응답**:
-  - 해당 질문에 대한 응답
+  - 해당 분류된 질문에 대한 응답
   
 
 # 5. Technology Stack (기술 스택)

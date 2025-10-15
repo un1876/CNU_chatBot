@@ -9,9 +9,11 @@ WEB_DIR = ROOT / "web"
 CSS_PATH = WEB_DIR / "page.css"
 HERO_PATH = WEB_DIR / "page.html"
 
+css_code = CSS_PATH.read_text(encoding="utf-8")
+hero_html = HERO_PATH.read_text(encoding="utf-8")
 
 # ===== 선택(그대로 두면 비활성) =====
-data_updated = False
+data_updated = True
 def update_all_data_once():
     global data_updated
     if not data_updated:
@@ -24,10 +26,9 @@ def update_notices():
     crawler = CNUNoticeCrawler()
     notices = crawler.crawl_notices(max_pages=10)
     crawler.save_to_json(notices, filename="notices.json")
-# update_all_data_once()
+update_all_data_once()
 
-css_code = CSS_PATH.read_text(encoding="utf-8")
-hero_html = HERO_PATH.read_text(encoding="utf-8")
+
 
 def reset():
     return "", []
