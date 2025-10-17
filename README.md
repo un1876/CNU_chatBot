@@ -42,7 +42,6 @@
 |------------|--------------------------------------------------------------------------------------------------------------------------|
 | HTML5      | <img src="https://github.com/user-attachments/assets/2e122e74-a28b-4ce7-aff6-382959216d31" alt="HTML5" width="100">      | 
 | CSS3       | <img src="https://github.com/user-attachments/assets/c531b03d-55a3-40bf-9195-9ff8c4688f13" alt="CSS3" width="100">       |
-| Javascript | <img src="https://github.com/user-attachments/assets/4a7d7074-8c71-48b4-8652-7431477669d1" alt="Javascript" width="100"> | 
 | Python     | <img src="public/python.png" alt="Python Logo" width="100"/>                                                             |
 <br/>
 
@@ -137,8 +136,31 @@
   <img src="public/5.png"/>
 
 # 7. 시스템 아키텍쳐
-<img src="public/ChatBot_SystemArchitecture.jpg"/>
 
+
+## Inference Pipeline (v1)
+<img src="public/ver-1.jpg" width="400">
+
+1. **Roberta 분류**: 질문 → 토픽/타이틀 분류
+2. **(fine-tuned)KoGPT2**: 컨텍스트 기반 응답 생성
+3. **Answer**: 최종 응답 반환
+
+## Inference Pipeline (v2)
+<img src="public/ver-2.jpg" width="400">
+
+1. **Roberta 분류**: 질문 → 토픽/타이틀 분류
+2. **RAG 조회**: 토픽에 맞는 데이터 검색/주입(new)
+3. **KoGPT2**: 컨텍스트 기반 1차 응답 생성
+4. **Reformation (GPT-OSS-120B)**: 톤/형식 정리(new)
+5. **Answer**: 최종 응답 반환
+
+## Inference Pipeline (v3)
+<img src="public/ver-3.jpg" width="400">
+
+1. **Roberta 분류**: 질문 → 토픽/타이틀 분류
+2. **RAG 조회**: 토픽에 맞는 데이터 검색/주입
+3. **GPT-OSS-120B**: 컨텍스트 기반 응답 생성
+4. **Answer**: 최종 응답 반환
 
 # 8. License
 본 프로젝트의 UI 코드는 다음 오픈소스 프로젝트를 일부 참고/재사용했습니다:

@@ -1,5 +1,5 @@
 import gradio as gr
-from chatbot_pipeline import respond  # 그대로 사용
+from src.pipeline.chatbot_pipeline_ver3 import respond  # 🤗 ver 적용 🤗
 from academic_crawler import crawl_academic_calendar
 from notice_crawler import CNUNoticeCrawler
 from pathlib import Path
@@ -25,7 +25,7 @@ def update_all_data_once():
 def update_notices():
     crawler = CNUNoticeCrawler()
     notices = crawler.crawl_notices(max_pages=10)
-    crawler.save_to_json(notices, filename="notices.json")
+    crawler.save_to_json(notices, filename="../rag_data/notice/notices.json")
 update_all_data_once()
 
 

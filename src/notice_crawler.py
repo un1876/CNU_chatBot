@@ -1,10 +1,7 @@
-import requests
+import requests,json,time,re
 from bs4 import BeautifulSoup
-import json
-import time
-from urllib.parse import urljoin, parse_qs, urlparse
-import re
-
+from urllib.parse import urljoin
+from pathlib import Path
 
 class CNUNoticeCrawler:
     def __init__(self):
@@ -517,7 +514,10 @@ def main():
 
         if notices:
             # JSON 파일로 저장
-            success = crawler.save_to_json(notices)
+            SAVE_DIR = Path("../rag_data/notice")
+            out_path = SAVE_DIR / "notices.json"
+
+            success = crawler.save_to_json(notices, filename=str(out_path))
 
             if success:
                 print(f"\n✅ 크롤링이 성공적으로 완료되었습니다!")
