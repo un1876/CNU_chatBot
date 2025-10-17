@@ -21,17 +21,18 @@
 
 
 # 2. Team Members (팀원 및 팀 소개)
-|                 김동언                  |  최재영  |  최은서  |  
-|:------------------------------------:|:-----:|:-----:|
-|               PL,FE,BE               | DB,FE | DB,BE |
-| [GitHub](hhttps://github.com/un1876) |       |       |
+|                 김동언                 |  최재영   |  최은서   |  
+|:-----------------------------------:|:------:|:------:|
+|             PL, FE, BE              | DB, FE | DB, BE |
+| [GitHub](https://github.com/un1876) |        |        |
 
-- Duration: 25.05 ~ 06
-
+- Duration: 
+  - ver1,2 : 25.05 ~ 06
+  - ver3: 25.07~ 
 # 3. Key Features (주요 기능)
 
 - **질문 분류**:
-  - 질문 시 분류모델에서 다섯 주제 중 하나로 분류
+  - 질문 시 분류모델에서 다섯 주제 분류
 - **질의 응답**:
   - 해당 분류된 질문에 대한 응답
   
@@ -138,14 +139,14 @@
 # 7. 시스템 아키텍쳐
 
 
-## Inference Pipeline (v1)
+### Inference Pipeline (v1)
 <img src="public/ver-1.jpg" width="400">
 
 1. **Roberta 분류**: 질문 → 토픽/타이틀 분류
 2. **(fine-tuned)KoGPT2**: 컨텍스트 기반 응답 생성
 3. **Answer**: 최종 응답 반환
 
-## Inference Pipeline (v2)
+### Inference Pipeline (v2)
 <img src="public/ver-2.jpg" width="400">
 
 1. **Roberta 분류**: 질문 → 토픽/타이틀 분류
@@ -154,7 +155,7 @@
 4. **Reformation (GPT-OSS-120B)**: 톤/형식 정리(new)
 5. **Answer**: 최종 응답 반환
 
-## Inference Pipeline (v3)
+### Inference Pipeline (v3)
 <img src="public/ver-3.jpg" width="400">
 
 1. **Roberta 분류**: 질문 → 토픽/타이틀 분류
