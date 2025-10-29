@@ -49,14 +49,27 @@ html, body{
 /* 그라데이션 텍스트 */
 /* ✅ 안정화된 그라데이션 텍스트 + 브라우저 폴백 */
 .gradient-text{
-  background:
-  linear-gradient(169deg, rgba(124, 58, 237, 0.04), rgba(235, 71, 152, 0.57) 50%, rgba(122, 109, 213, 0.52) 82.35%, rgba(59, 130, 246, 0.24)) !important
-  -webkit-background-clip: rgb(171, 136, 191);
+  -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: rgb(171, 136, 191);  /* Safari/웹킷 필수 */
   color: transparent;                     /* 기타 브라우저 */
   display: inline-block;                  /* 배경 계산 안정화 */
   position: relative; z-index: 1;         /* 드문 겹침 이슈 예방 */
+  padding: .35rem .75rem;      /* 배지 여백 */
+  /*z-index: 0;  */
+}
+.gradient-text.rounded::before {
+  content: "";
+  position: absolute;
+  inset: 0;                    /* 패딩 포함 전체 덮기 */
+  border-radius: .75rem;       /* ← 꼭짓점 둥글게 */
+  background:
+  linear-gradient(169deg, rgba(124, 58, 237, 0.04), rgba(235, 71, 152, 0.57) 50%, rgba(122, 109, 213, 0.52) 82.35%, rgba(59, 130, 246, 0.24));        /* 연한 배경 */
+  box-shadow:
+    0 0 0 1px rgba(171, 136, 191, 0.35) inset,         /* 안쪽 보더 느낌 */
+    0 8px 24px rgba(0, 0, 0, 0.08);                    /* 살짝 그림자 */
+  pointer-events: none;
+  z-index: -1;                 /* 텍스트 뒤로 */
 }
 
 /* ⛑️ 폴백: 배경클립 미지원 환경에서는 그냥 단색으로 보여주기 */

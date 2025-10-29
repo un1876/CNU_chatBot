@@ -1,11 +1,9 @@
-import json
-import re
+import json,re,time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
-import time
 from collections import defaultdict
 
 
@@ -27,8 +25,9 @@ def extract_month_day(text):
     return None, None
 
 
-def crawl_academic_calendar():
-    url = "https://plus.cnu.ac.kr/_prog/academic_calendar/?site_dvs_cd=kr&menu_dvs_cd=05020101&year=2025"
+def crawl_academic_calendar(year):
+    result = []
+    url = f"https://plus.cnu.ac.kr/_prog/academic_calendar/?site_dvs_cd=kr&menu_dvs_cd=05020101&year={year}"
     driver = get_driver()
     try:
         driver.get(url)
@@ -37,7 +36,6 @@ def crawl_academic_calendar():
         driver.quit()
         return
     time.sleep(3)
-
     soup = BeautifulSoup(driver.page_source, 'html.parser')
 
     # 기준 연도 추출
@@ -76,16 +74,18 @@ def crawl_academic_calendar():
                 "분류": "학사일정"
             })
 
-    # 리스트로 변환
-    result = []
+
     for month_year, schedules in sorted(data_by_month.items()):
         result.append({
             "month": month_year,
             "schedules": schedules
         })
 
+    return result
+
+
     # JSON 저장
-    with open("../rag_data/canlendar/academic_calendar.json", "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
+    # with open("../rag_data/calendar/academic_calendar.json", "w", encoding="utf-8") as f:
+    #     json.dump(result, f, ensure_ascii=False, indent=2)
 
 

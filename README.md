@@ -3,32 +3,45 @@
 <br/>
 
 # 0. Getting Started
+  git clone
 ```bash
  git clone https://github.com/un1876/CNU_chatBot.git
  cd CNU_chatBot
+```
+  
+  install & run
+```bash
+
  pip install -r requirements.txt
  cd src
  python cnuchatbot.py
 
 ```
-
-[//]: # ([서비스 링크]&#40;https://club-project-one.vercel.app/&#41;)
+! need : python>=3.11
 
 
 # 1. Project Overview
 - 프로젝트 이름: CNU 챗봇
-- 프로젝트 설명: 교내 다섯 주제(졸업요건, 학사 공지, 학사 일정, 교내 버스, 교내 식당)에 대해 질의응답하는 챗봇 
+- 프로젝트 설명: 교내 졸업요건, 학사 공지, 학사 일정, 교내 버스, 교내 식당 질의응답하는 챗봇 
 
 
 # 2. Team Members (팀원 및 팀 소개)
+  ### ver 1, 2
 |                 김동언                 |  최재영   |  최은서   |  
 |:-----------------------------------:|:------:|:------:|
-|             PL, FE, BE              | DB, FE | DB, BE |
+|               PL, BE                | DB, FE | DB, BE |
 | [GitHub](https://github.com/un1876) |        |        |
 
-- Duration: 
-  - ver1,2 : 25.05 ~ 06
-  - ver3: 25.07~ 
+  - Duration: 
+    - ver1,2 : 25.05 ~ 06
+  ### ver 3
+|                 김동언                 |  
+|:-----------------------------------:|
+|           PL, Full stack            |
+| [GitHub](https://github.com/un1876) |
+
+  - Duration:
+    - ver3: 25.10
 # 3. Key Features (주요 기능)
 
 - **질문 분류**:
@@ -37,8 +50,8 @@
   - 해당 분류된 질문에 대한 응답
   
 
-# 5. Technology Stack (기술 스택)
-## 5.1 Language
+# 4. Technology Stack (기술 스택)
+## 4.1 Language
 |            |                                                                                                                          |
 |------------|--------------------------------------------------------------------------------------------------------------------------|
 | HTML5      | <img src="https://github.com/user-attachments/assets/2e122e74-a28b-4ce7-aff6-382959216d31" alt="HTML5" width="100">      | 
@@ -46,7 +59,7 @@
 | Python     | <img src="public/python.png" alt="Python Logo" width="100"/>                                                             |
 <br/>
 
-## 5.2 Frotend
+## 4.2 Frotend
 |        |                                                              |  |
 |--------|--------------------------------------------------------------|----------------|
 | Gradio | <img src="public/gradio.svg" alt="Gradio Logo" width="100"/> |  5.34.1   |
@@ -67,74 +80,77 @@
 
 <br/>
 
-[//]: # (## 5.4 Cooperation)
+## 5.4 Cooperation
 
-[//]: # (|  |  |)
+|      |  |
+|------|-----------------|
+| Git  |  <img src="https://github.com/user-attachments/assets/483abc38-ed4d-487c-b43a-3963b33430e6" alt="git" width="100">    |
+| KakaoTalk |  <img src="public/kakao.png" alt="Notion" width="100">    |
 
-[//]: # (|-----------------|-----------------|)
 
-[//]: # (| Git    |  <img src="https://github.com/user-attachments/assets/483abc38-ed4d-487c-b43a-3963b33430e6" alt="git" width="100">    |)
+<br/>
 
-[//]: # (| Notion    |  <img src="https://github.com/user-attachments/assets/34141eb9-deca-416a-a83f-ff9543cc2f9a" alt="Notion" width="100">    |)
+# 6. Project Structure (프로젝트 구조)
 
-[//]: # ()
-[//]: # (<br/>)
+```plaintext
 
-[//]: # (# 6. Project Structure &#40;프로젝트 구조&#41;)
+project/
+├── public/ 
+│   └── img                  # 이미지, 폰트 등 정적 파일
+├── rag_data/                #  RAG 데이터
+│   ├── bus/                        # 주제1. 버스
+│   ├── ├── bus_route.json
+│   ├── └── Daejon_BUS_all_stops.json
+│   ├── caendar/                    # 주제2. 학사일정
+│   ├── └── academic_calendar.json          
+│   ├── graduation_requirements/    # 주제3. 졸업요건              
+│   ├── └── graduation_RAG.json
+│   ├── notice/                     # 주제4. 학사공지
+│   ├── └── notice.json
+│   ├── restaurant/                 # 주제5. 식단     
+│   └── └── menu_1.json
+├── src/
+│   ├── academic_crawler.py         # 학사일정 크롤러
+│   ├── chatbot_pipeline_ver1.py    # 챗봇 ver.1
+│   ├── chatbot_pipeline_ver2.py    # 챗봇 ver.2
+│   ├── chatbot_pipeline_ver3.py    # 챗봇 ver.3
+│   ├── cnuchatbot.py               # 챗봇 실행 
+│   ├── date_crawler.py             # 
+│   ├── menu_crawler.py
+│   └── notice_crawler.py
+├── web/                    # gradio web page 코드
+│   ├── page.css
+│   └── page.html
+├── .env                    # 환경 설정 파일
+├── .gitignore
+├── requirements.txt        
+├── README.md               # 프로젝트 개요 및 사용법
+└── requirements.txt
+```
 
-[//]: # (```plaintext)
 
-[//]: # (project/)
+<br/>
 
-[//]: # (├── public/)
-
-[//]: # (│   ├── index.html           # HTML 템플릿 파일)
-
-[//]: # (│   └── favicon.ico          # 아이콘 파일)
-
-[//]: # (├── src/)
-
-[//]: # (│   ├── assets/              # 이미지, 폰트 등 정적 파일)
-
-[//]: # (│   ├── components/          # 재사용 가능한 UI 컴포넌트)
-
-[//]: # (│   ├── hooks/               # 커스텀 훅 모음)
-
-[//]: # (│   ├── pages/               # 각 페이지별 컴포넌트)
-
-[//]: # (│   ├── App.js               # 메인 애플리케이션 컴포넌트)
-
-[//]: # (│   ├── index.js             # 엔트리 포인트 파일)
-
-[//]: # (│   ├── index.css            # 전역 css 파일)
-
-[//]: # (│   ├── firebaseConfig.js    # firebase 인스턴스 초기화 파일)
-
-[//]: # (│   package-lock.json    # 정확한 종속성 버전이 기록된 파일로, 일관된 빌드를 보장)
-
-[//]: # (│   package.json         # 프로젝트 종속성 및 스크립트 정의)
-
-[//]: # (├── .gitignore               # Git 무시 파일 목록)
-
-[//]: # (└── README.md                # 프로젝트 개요 및 사용법)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (<br/>)
-
-[//]: # (<br/>)
+<br/>
 
 # 6. 서비스 화면
-  - 첫화면
-<img src="public/1.png"/>
-  - 채팅
-  <img src="public/3.png"/>
-  <img src="public/4.png"/>
-  - 추가 기능 -표현(ex.간략히)
-  <img src="public/2.png"/>
-  <img src="public/2_1.png"/>
-  <img src="public/5.png"/>
+|        |                             |
+|--------|-----------------------------|
+| 홈화면    | <img src="public/1.jpeg"/>  |
+| 졸업요건   | <img src="public/2.jpeg"/>  |
+|        | <img src="public/3.jpeg"/>  |
+| 버스/통학  | <img src="public/4.jpeg"/>  |
+|        | <img src="public/5.jpeg"/>  |
+|        | <img src="public/6.jpeg"/>  |
+|        | <img src="public/7.jpeg"/>  |
+|        | <img src="public/8.jpeg"/>  |
+| 학교공지사항 | <img src="public/9.jpeg"/>  |
+|  | <img src="public/10.jpeg"/> |
+| 학사일정       | <img src="public/11.jpeg"/> |
+| 식단   | <img src="public/12.jpeg"/> |
+|      | <img src="public/13.jpeg"/> |
+
+
 
 # 7. 시스템 아키텍쳐
 
@@ -151,9 +167,10 @@
 
 1. **Roberta 분류**: 질문 → 토픽/타이틀 분류
 2. **RAG 조회**: 토픽에 맞는 데이터 검색/주입(new)
-3. **KoGPT2**: 컨텍스트 기반 1차 응답 생성
-4. **Reformation (GPT-OSS-120B)**: 톤/형식 정리(new)
-5. **Answer**: 최종 응답 반환
+3. **(fine-tuned)KoGPT2**: 컨텍스트 기반 응답 생성
+4. **Answer**: 최종 응답 반환
+
+limitation: (KoGPT2)작은 언어 모델로 인해 답변 퀄리티 미흡
 
 ### Inference Pipeline (v3)
 <img src="public/ver-3.jpg" width="400">
@@ -162,7 +179,11 @@
 2. **RAG 조회**: 토픽에 맞는 데이터 검색/주입
 3. **GPT-OSS-120B**: 컨텍스트 기반 응답 생성
 4. **Answer**: 최종 응답 반환
-
+- (ver2->ver3) UPDATE List: 
+  - (Fine-tuned 챗봇 모델)KoGpt-2모델 제거 -> 답변 퀄리티 증가 
+  - RAG데이터 및 크롤링 전격 추가, 개선
+  - UI 변경   
+  - 학교공지사항, 학사일정 분류 개선
 # 8. License
 본 프로젝트의 UI 코드는 다음 오픈소스 프로젝트를 일부 참고/재사용했습니다:
 - imgToVideo (MIT License) © 20XX Original Author

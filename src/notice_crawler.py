@@ -5,8 +5,8 @@ from pathlib import Path
 
 class CNUNoticeCrawler:
     def __init__(self):
-        self.base_url = "https://eng.cnu.ac.kr"
-        self.notice_url = "https://eng.cnu.ac.kr/eng/information/notice.do"
+        self.base_url = "https://plus.cnu.ac.kr/"
+        self.notice_url = "https://plus.cnu.ac.kr/_prog/_board/?code=sub07_0702&site_dvs_cd=kr&menu_dvs_cd=0702"
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -417,7 +417,7 @@ class CNUNoticeCrawler:
         """공지사항을 크롤링하는 메인 함수"""
         all_notices = []
 
-        print(f"=== 충남대학교 공과대학 공지사항 크롤링 시작 ===")
+        print(f"=== 충남대학교 공지사항 크롤링 시작 ===")
         print(f"크롤링 대상: 최대 {max_pages}페이지")
         print(f"대상 URL: {self.notice_url}")
 
@@ -503,7 +503,7 @@ class CNUNoticeCrawler:
 
 def main():
     """메인 실행 함수"""
-    print("충남대학교 공과대학 공지사항 크롤러 v2.1 (개선된 내용 추출)")
+    print("충남대학교 공지사항 크롤러 v2.1 (개선된 내용 추출)")
     print("=" * 60)
 
     crawler = CNUNoticeCrawler()
