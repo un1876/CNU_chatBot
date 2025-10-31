@@ -137,8 +137,8 @@ project/
 # 6. 서비스 화면(ver 3 기준)
 |        |                                       |                                       |
 |--------|---------------------------------------|---------------------------------------|
-| 홈화면    | <img src="public/1.jpeg" width="400"> |                                       |
-| 졸업요건   | <img src="public/2.jpeg" width="400">           | <img src="public/3.jpeg" width="400"> |
+| 홈화면    | <img src="public/1.jpeg" width="500"> |                                       |
+| 졸업요건   | <img src="public/2.jpeg" width="500"> | <img src="public/3.jpeg" width="500"> |
 | 버스/통학  | <img src="public/4.jpeg"/>            |                                       |
 |        | <img src="public/5.jpeg"/>            |                                       |
 |        | <img src="public/6.jpeg"/>            |                                       |
