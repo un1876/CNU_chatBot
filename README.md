@@ -139,19 +139,15 @@ project/
 |--------|--------------------------------------|
 |  홈화면   | <img src="public/1.jpg" width="500"> |
 
-|        |                                        |                                        |
-|:------:|----------------------------------------|----------------------------------------|
-|  졸업요건  | <img src="public/2.jpg" width="100%"/> | <img src="public/3.jpg" width="100%"/> |
-| 버스/통학  | <img src="public/4.jpg"/>              |                                        |
-|        | <img src="public/5.jpg"/>              |                                        |
-|        | <img src="public/6.jpg"/>              |                                        |
-|        | <img src="public/7.jpg"/>              |                                        |
-|        | <img src="public/8.jpg"/>              |                                        |
-| 학교공지사항 | <img src="public/9.jpg"/>              |                                        |
-|        | <img src="public/10.jpg"/>             |                                        |
-|  학사일정  | <img src="public/11.jpg"/>             |                                        |
-|   식단   | <img src="public/12.jpg"/>             |                                        |
-|        | <img src="public/13.jpg"/>             |                                        |
+|        |                                         |                                         |
+|:------:|-----------------------------------------|-----------------------------------------|
+|  졸업요건  | <img src="public/2.jpg" width="100%"/>  | <img src="public/3.jpg" width="100%"/>  |
+| 버스/통학  | <img src="public/4.jpg" width="100%"/>  | <img src="public/5.jpg" width="100%">   |
+|        | <img src="public/6.jpg" width="100%"/>  | <img src="public/7.jpg" width="100%"/>  |
+|        | <img src="public/8.jpg" >               |                                         |
+| 학교공지사항 | <img src="public/9.jpg"  width="100%"/> | <img src="public/10.jpg" width="100%"/> |
+|  학사일정  | <img src="public/11.jpg" width="100%"/> |                                         |
+|   식단   | <img src="public/12.jpg" width="100%"/> | <img src="public/13.jpg" width="100%"/>             |
 
 
 
