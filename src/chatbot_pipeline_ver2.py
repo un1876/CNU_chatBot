@@ -3,7 +3,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 from transformers import AutoTokenizer,AutoModelForSequenceClassification, GPT2LMHeadModel
 from bs4 import BeautifulSoup
-from textwrap import dedent
+from pathlib   import Path
 from huggingface_hub import InferenceClient
 
 data_updated = False
@@ -22,12 +22,16 @@ model_classification = AutoModelForSequenceClassification.from_pretrained(model_
 tokenizer = AutoTokenizer.from_pretrained(chat_dir, token=token, use_fast=True)
 model = GPT2LMHeadModel.from_pretrained(chat_dir, token=token).eval()
 
+BASE_DIR = Path(__file__).resolve().parents[1]   # 프로젝트 루트(/chatbot)
+RAG_PATH = BASE_DIR / "rag_data"
+
 # 데이터 로딩
-with open("../rag_data/restaurant/menu_1.json", "r", encoding="utf-8") as f:
+with open(RAG_PATH/ "restaurant" / "menu_1.json", "r", encoding="utf-8") as f:
     fixed_menu_1 = json.load(f)
-with open("../rag_data/restaurant/menu_other.json", "r", encoding="utf-8") as f:
-    daily_menu = json.load(f)
-with open('../rag_data/bus/bus_route.json', 'r', encoding='utf-8') as f:
+
+# with open("../rag_data/restaurant/menu_other.json", "r", encoding="utf-8") as f:
+#     daily_menu = json.load(f)
+with open(RAG_PATH/ "bus" / "bus_route.json", "r", encoding="utf-8") as f:
     bus_stops = json.load(f)
 
 
@@ -516,7 +520,7 @@ def respond(message, history=None):
     else:
         response = "지원되지 않는 주제입니다."
 
-    response=response
+    print(response)
     history.append({"role": "user", "content": message})
     history.append({"role": "assistant", "content": response})
     return "", history

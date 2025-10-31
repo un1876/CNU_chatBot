@@ -1,6 +1,6 @@
 import gradio as gr,signal, subprocess,os,json
 from datetime import  datetime
-from chatbot_pipeline_ver3 import respond  # 🤗 ver 적용 🤗
+from chatbot_pipeline_ver2 import respond  # 🤗 ver 적용 🤗
 from academic_crawler import crawl_academic_calendar
 from notice_crawler import CNUNoticeCrawler
 from pathlib import Path

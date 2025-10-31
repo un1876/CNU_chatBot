@@ -3,6 +3,8 @@
 <br/>
 
 # 0. Getting Started
+🙏 need : python>=3.11
+
   git clone
 ```bash
  git clone https://github.com/un1876/CNU_chatBot.git
@@ -17,7 +19,7 @@
  python cnuchatbot.py
 
 ```
-! need : python>=3.11
+
 
 
 # 1. Project Overview
@@ -33,7 +35,7 @@
 | [GitHub](https://github.com/un1876) |        |        |
 
   - Duration: 
-    - ver1,2 : 25.05 ~ 06
+    - ver 1,2 : 25.05 ~ 06
   ### ver 3
 |                 김동언                 |  
 |:-----------------------------------:|
@@ -41,7 +43,7 @@
 | [GitHub](https://github.com/un1876) |
 
   - Duration:
-    - ver3: 25.10
+    - ver 3: 25.10
 # 3. Key Features (주요 기능)
 
 - **질문 분류**:
@@ -60,9 +62,9 @@
 <br/>
 
 ## 4.2 Frotend
-|        |                                                              |  |
-|--------|--------------------------------------------------------------|----------------|
-| Gradio | <img src="public/gradio.svg" alt="Gradio Logo" width="100"/> |  5.34.1   |
+|        |                                                              | 
+|--------|--------------------------------------------------------------|
+| Gradio | <img src="public/gradio.svg" alt="Gradio Logo" width="100"/> |
 
 
 
@@ -80,7 +82,7 @@
 
 <br/>
 
-## 5.4 Cooperation
+## 4.3 Cooperation
 
 |      |  |
 |------|-----------------|
@@ -90,7 +92,7 @@
 
 <br/>
 
-# 6. Project Structure (프로젝트 구조)
+# 5. Project Structure (프로젝트 구조)
 
 ```plaintext
 
@@ -114,18 +116,17 @@ project/
 │   ├── chatbot_pipeline_ver1.py    # 챗봇 ver.1
 │   ├── chatbot_pipeline_ver2.py    # 챗봇 ver.2
 │   ├── chatbot_pipeline_ver3.py    # 챗봇 ver.3
-│   ├── cnuchatbot.py               # 챗봇 실행 
-│   ├── date_crawler.py             # 
-│   ├── menu_crawler.py
-│   └── notice_crawler.py
+│   ├── cnuchatbot.py               # 챗봇 실행 파일
+│   ├── date_crawler.py             # 날짜 클로러
+│   ├── menu_crawler.py             # 메큐 크롤러
+│   └── notice_crawler.py           # 공지 크롤러
 ├── web/                    # gradio web page 코드
 │   ├── page.css
 │   └── page.html
 ├── .env                    # 환경 설정 파일
 ├── .gitignore
-├── requirements.txt        
 ├── README.md               # 프로젝트 개요 및 사용법
-└── requirements.txt
+└── requirements.txt        
 ```
 
 
@@ -134,21 +135,20 @@ project/
 <br/>
 
 # 6. 서비스 화면(ver 3 기준)
-|        |                             |
-|--------|-----------------------------|
-| 홈화면    | <img src="public/1.jpeg"/>  |
-| 졸업요건   | <img src="public/2.jpeg"/>  |
-|        | <img src="public/3.jpeg"/>  |
-| 버스/통학  | <img src="public/4.jpeg"/>  |
-|        | <img src="public/5.jpeg"/>  |
-|        | <img src="public/6.jpeg"/>  |
-|        | <img src="public/7.jpeg"/>  |
-|        | <img src="public/8.jpeg"/>  |
-| 학교공지사항 | <img src="public/9.jpeg"/>  |
-|  | <img src="public/10.jpeg"/> |
-| 학사일정       | <img src="public/11.jpeg"/> |
-| 식단   | <img src="public/12.jpeg"/> |
-|      | <img src="public/13.jpeg"/> |
+|        |                             | |
+|--------|-----------------------------|-|
+| 홈화면    | <img src="public/1.jpeg"/>  | |
+| 졸업요건   | <img src="public/2.jpeg"/>  | <img src="public/3.jpeg"/> |
+| 버스/통학  | <img src="public/4.jpeg"/>  | |
+|        | <img src="public/5.jpeg"/>  | |
+|        | <img src="public/6.jpeg"/>  | |
+|        | <img src="public/7.jpeg"/>  | |
+|        | <img src="public/8.jpeg"/>  | |
+| 학교공지사항 | <img src="public/9.jpeg"/>  | |
+|  | <img src="public/10.jpeg"/> | |
+| 학사일정       | <img src="public/11.jpeg"/> | |
+| 식단   | <img src="public/12.jpeg"/> | |
+|      | <img src="public/13.jpeg"/> | |
 
 
 
@@ -180,8 +180,8 @@ limitation: (KoGPT2)작은 언어 모델로 인해 답변 퀄리티 미흡
 3. **GPT-OSS-120B**: 컨텍스트 기반 응답 생성
 4. **Answer**: 최종 응답 반환
 - (ver2->ver3) UPDATE List: 
-  - (Fine-tuned 챗봇 모델)KoGpt-2모델 ->  GPT-OSS-120B 답변 퀄리티 증가 
-  - R.A.G 데이터 추가
+  - (Fine-tuned 챗봇 모델)KoGpt-2모델 ->  GPT-OSS-120B 답변 퀄리티 개선 
+  - R.A.G 데이터 추가 및 개선
   - 크롤링 추가 및 전격 개선
   - UI 변경   
   - 학교공지사항, 학사일정 분류 정확도 개선

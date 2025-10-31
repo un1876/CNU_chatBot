@@ -1,10 +1,11 @@
-import json, re, urllib.parse, requests
+import  re
 import os
 import torch
 from dotenv import load_dotenv
 from transformers import AutoTokenizer,AutoModelForSequenceClassification, GPT2LMHeadModel,StoppingCriteria, StoppingCriteriaList
-data_updated = False
 
+
+data_updated = False
 
 load_dotenv()
 token=os.getenv("TOKEN")
