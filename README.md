@@ -135,20 +135,20 @@ project/
 <br/>
 
 # 6. 서비스 화면(ver 3 기준)
-|        |                             | |
-|--------|-----------------------------|-|
-| 홈화면    | <img src="public/1.jpeg"/>  | |
-| 졸업요건   | <img src="public/2.jpeg"/>  | <img src="public/3.jpeg"/> |
-| 버스/통학  | <img src="public/4.jpeg"/>  | |
-|        | <img src="public/5.jpeg"/>  | |
-|        | <img src="public/6.jpeg"/>  | |
-|        | <img src="public/7.jpeg"/>  | |
-|        | <img src="public/8.jpeg"/>  | |
-| 학교공지사항 | <img src="public/9.jpeg"/>  | |
-|  | <img src="public/10.jpeg"/> | |
-| 학사일정       | <img src="public/11.jpeg"/> | |
-| 식단   | <img src="public/12.jpeg"/> | |
-|      | <img src="public/13.jpeg"/> | |
+|        |                                       |                                       |
+|--------|---------------------------------------|---------------------------------------|
+| 홈화면    | <img src="public/1.jpeg" width="400"> |                                       |
+| 졸업요건   | <img src="public/2.jpeg" width="400">           | <img src="public/3.jpeg" width="400"> |
+| 버스/통학  | <img src="public/4.jpeg"/>            |                                       |
+|        | <img src="public/5.jpeg"/>            |                                       |
+|        | <img src="public/6.jpeg"/>            |                                       |
+|        | <img src="public/7.jpeg"/>            |                                       |
+|        | <img src="public/8.jpeg"/>            |                                       |
+| 학교공지사항 | <img src="public/9.jpeg"/>            |                                       |
+|  | <img src="public/10.jpeg"/>           |                                       |
+| 학사일정       | <img src="public/11.jpeg"/>           |                                       |
+| 식단   | <img src="public/12.jpeg"/>           |                                       |
+|      | <img src="public/13.jpeg"/>           |                                       |
 
 
 
